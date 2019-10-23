@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    background-color: #2B2B3A;
+    padding: .5rem 2rem;
+    box-shadow: 0 0 10px 2px #000;
+
+    &__logo {
+        font-size: 4rem;
+        flex-grow: 1;
+        text-transform: uppercase;
+
+        &--color {
+            color: #EAFC40;
+        }
+    }
+
+    &__back-button {
+        background-color: transparent;
+        border: none;
+        font-size: 4rem;
+        align-self: center;
+        color: #F4F5F6;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            color: #EAFC40;
+        }
+
+        &--disabled {
+            color: darken(#F4F5F6, 60%);
+
+            &:hover {
+                color: darken(#F4F5F6, 60%);
+            }
+        }
+
+    }
+}

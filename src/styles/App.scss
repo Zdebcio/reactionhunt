@@ -1,0 +1,17 @@
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 6rem;
+    text-align: center;
+    color: #EAFC40;
+}

@@ -1,0 +1,73 @@
+.start {
+    justify-content: space-evenly;
+
+    &__game-list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__game-option {
+        text-align: center;
+        font-size: 2.5rem;
+        border: .4rem solid #F4F5F6;
+        margin: .6rem 0;
+        border-radius: 40px;
+        padding: .5rem 1rem;
+        width: 25rem;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            border-color: #1ED2F4;
+            color: #1ED2F4;
+        }
+
+        &.active {
+            border-color: #1ED2F4;
+            color: #1ED2F4;
+        }
+    }
+
+    &__rules-btn {
+        min-width: 4rem;
+        min-height: 4rem;
+        font-size: 2rem;
+        align-self: center;
+        background-color: transparent;
+        color: #F4F5F6;
+        border: .4rem solid #F4F5F6;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            border-color: #1ED2F4;
+            color: #1ED2F4;
+        }
+    }
+
+    &__new-game-btn {
+        align-self: center;
+        background-color: transparent;
+        color: #F4F5F6;
+        border: .4rem solid #F4F5F6;
+        border-radius: 30px;
+        font-size: 6rem;
+        text-transform: uppercase;
+        line-height: 120%;
+        padding: 0 7rem;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            border-color: #1ED2F4;
+            color: #1ED2F4;
+        }
+    }
+}
