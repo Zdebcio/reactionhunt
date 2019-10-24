@@ -1,0 +1,40 @@
+.game {
+
+    &__counter {
+        background-color: #EAFC40;
+        height: 1rem;
+        transform: scaleX(0);
+    }
+
+    &__stats {
+        margin-top: 2rem;
+    }
+
+    &__title {
+        font-size: 6rem;
+        text-align: center;
+        color: #EAFC40;
+        line-height: 100%;
+    }
+
+    &__title--small {
+        color: #F4F5F6;
+        font-size: 4rem;
+    }
+
+    &__board {
+        flex-grow: 1;
+        align-self: center;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem;
+    }
+
+    &__field {
+        margin: 2%;
+        flex-basis: 46%;
+        cursor: pointer;
+        box-shadow: 0 0 5px 0px rgba(0, 0, 0, .5);
+    }
+}

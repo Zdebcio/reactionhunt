@@ -1,6 +1,14 @@
 .start {
     justify-content: space-evenly;
 
+    &__title {
+        font-size: 6rem;
+        text-align: center;
+        color: #EAFC40;
+        line-height: 100%;
+        margin-bottom: 2rem;
+    }
+
     &__game-list {
         list-style: none;
         display: flex;

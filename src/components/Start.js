@@ -38,7 +38,7 @@ class Start extends Component {
       <>
         <main className="content start">
           <section className="start-game-mode">
-            <h2 className="start__game-title title">Typ gry</h2>
+            <h2 className="start__title">Typ gry</h2>
             <ul className="start__game-list">{gameOptions}</ul>
           </section>
           <button

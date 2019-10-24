@@ -46,7 +46,7 @@ class App extends Component {
             />
           );
         case "game":
-          return <Game />;
+          return <Game gameMode={gameMode} />;
         case "rules":
           return <Rules />;
         default:
