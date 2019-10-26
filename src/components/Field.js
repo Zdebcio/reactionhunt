@@ -15,7 +15,7 @@ const Field = React.forwardRef((props, ref) => {
   const visible = () => {
     const icon = document.querySelector(`.field:nth-child(${id}) .fa-eye`);
     icon.style.display = "block";
-    props.setTimeout(visibleOff, 10);
+    props.setTimeout(visibleOff, 100);
   };
 
   if (isTrue && !props.clickedField) {
@@ -50,49 +50,3 @@ const Field = React.forwardRef((props, ref) => {
 });
 
 export default ReactTimeout(Field);
-
-// class Field extends Component {
-//     state = {};
-
-//     visibleOff = () => {
-//       const { id } = this.props.field;
-//       const icon = document.querySelector(`.field:nth-child(${id}) .fa-eye`);
-//       icon.style.display = "none";
-//     };
-
-//     visible = () => {
-//       const { id } = this.props.field;
-//       const icon = document.querySelector(`.field:nth-child(${id}) .fa-eye`);
-//       icon.style.display = "block";
-//       this.props.setTimeout(this.visibleOff, 10);
-//     };
-
-//     render() {
-//       const { isTrue, id } = this.props.field;
-
-//       if (isTrue && !this.props.clickedField) {
-//         this.props.setTimeout(this.visible, 3000);
-//       }
-
-//       const isCorrect = () => {
-//         if (this.props.clickedField) {
-//           if (isTrue) {
-//             return <i className="fas fa-check"></i>;
-//           } else {
-//             return <i className="fas fa-times"></i>;
-//           }
-//         } else {
-//           return null;
-//         }
-//       };
-//       return (
-//         <div
-//           onClick={() => this.props.handleClickField(id)}
-//           className="game__field field"
-//         >
-//           <i className="fas fa-eye"></i>
-//           {isCorrect()}
-//         </div>
-//       );
-//     }
-//   }
