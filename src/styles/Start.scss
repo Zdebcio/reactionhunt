@@ -1,12 +1,28 @@
 .start {
     justify-content: space-evenly;
 
+    &__game-mode {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
     &__title {
         font-size: 6rem;
         text-align: center;
         color: #EAFC40;
         line-height: 100%;
         margin-bottom: 2rem;
+
+        @media (orientation: landscape) {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (orientation: landscape) and (min-width: 1024px) {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
     }
 
     &__game-list {
@@ -14,6 +30,13 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        @media (orientation: landscape) {
+            flex-direction: row;
+            width: 80%;
+            align-self: center;
+            justify-content: center;
+        }
     }
 
     &__game-option {
@@ -35,6 +58,34 @@
         &.active {
             border-color: #1ED2F4;
             color: #1ED2F4;
+        }
+
+        @media (orientation: landscape) {
+            font-size: 1.3rem;
+            padding: .2rem 0;
+            margin: 0 .4rem;
+            border-width: .25rem;
+        }
+
+        @media (orientation: landscape) and (min-width: 960px) {
+            font-size: 2rem;
+            margin: 0 .4rem;
+            border-width: .3rem;
+        }
+    }
+
+    &__bottom-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @media (orientation: landscape) {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        @media (orientation: landscape) and (min-width: 1024px) {
+            flex-direction: column;
         }
     }
 
@@ -58,6 +109,22 @@
             border-color: #1ED2F4;
             color: #1ED2F4;
         }
+
+        @media (orientation: landscape) {
+            order: 1;
+            min-width: 3rem;
+            min-height: 3rem;
+            font-size: 1.5rem;
+            border-width: .3rem;
+        }
+
+        @media (orientation: landscape) and (min-width: 1024px) {
+            order: 0;
+            min-width: 4rem;
+            min-height: 4rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
     }
 
     &__new-game-btn {
@@ -76,6 +143,29 @@
         &:hover {
             border-color: #1ED2F4;
             color: #1ED2F4;
+        }
+
+        @media (orientation: portrait) {
+            margin-top: 2rem;
+        }
+
+        @media (orientation: landscape) {
+            font-size: 3rem;
+            padding: 0 5rem;
+            margin-right: 2rem;
+        }
+
+        @media (orientation: landscape) and (min-width: 853px) {
+            font-size: 4rem;
+        }
+
+        @media (orientation: landscape) and (min-width: 960px) {
+            font-size: 5rem;
+        }
+
+        @media (orientation: landscape) and (min-width: 1024px) {
+            font-size: 5rem;
+            margin-right: 0;
         }
     }
 }

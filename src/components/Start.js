@@ -37,22 +37,24 @@ class Start extends Component {
     return (
       <>
         <main className="content start">
-          <section className="start-game-mode">
+          <section className="start__game-mode">
             <h2 className="start__title">Typ gry</h2>
             <ul className="start__game-list">{gameOptions}</ul>
           </section>
-          <button
-            onClick={() => this.props.changeComponent("rules")}
-            className="start__rules-btn"
-          >
-            <i className="fas fa-question"></i>
-          </button>
-          <button
-            onClick={() => this.props.changeComponent("game")}
-            className="start__new-game-btn"
-          >
-            Start
-          </button>
+          <section className="start__bottom-section">
+            <button
+              onClick={() => this.props.changeComponent("rules")}
+              className="start__rules-btn"
+            >
+              <i className="fas fa-question"></i>
+            </button>
+            <button
+              onClick={() => this.props.changeComponent("game")}
+              className="start__new-game-btn"
+            >
+              Start
+            </button>
+          </section>
         </main>
       </>
     );

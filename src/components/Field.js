@@ -42,7 +42,15 @@ const Field = React.forwardRef((props, ref) => {
   };
 
   return (
-    <div ref={ref} onClick={() => clickField(id)} className="game__field field">
+    <div
+      className={
+        props.fieldsNumber === 6
+          ? "game__field field game__field--six"
+          : "game__field field"
+      }
+      ref={ref}
+      onClick={() => clickField(id)}
+    >
       <i className="fas fa-eye"></i>
       {isCorrect()}
     </div>

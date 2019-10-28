@@ -110,7 +110,8 @@ class Game extends Component {
       points,
       level,
       clickedField,
-      clickedFieldId
+      clickedFieldId,
+      fieldsNumber
     } = this.state;
     const fields = fieldsInGame.map(field => (
       <Field
@@ -119,6 +120,7 @@ class Game extends Component {
         handleClickField={this.handleClickField}
         clickedField={clickedField}
         clickedFieldId={clickedFieldId}
+        fieldsNumber={fieldsNumber}
       />
     ));
     const finiishLevel = () => {
