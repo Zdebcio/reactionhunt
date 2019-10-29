@@ -6,6 +6,19 @@
         background-color: #EAFC40;
         height: 1rem;
         transform: scaleX(0);
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+
+        @keyframes counter {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
     }
 
     &__stats {

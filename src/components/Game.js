@@ -111,7 +111,8 @@ class Game extends Component {
       level,
       clickedField,
       clickedFieldId,
-      fieldsNumber
+      fieldsNumber,
+      isLevelRender
     } = this.state;
     const fields = fieldsInGame.map(field => (
       <Field
@@ -165,7 +166,17 @@ class Game extends Component {
 
     return (
       <main className="content game">
-        <div className="game__counter"></div>
+        <div
+          style={
+            !clickedField && isLevelRender
+              ? {
+                  color: "red",
+                  animationName: "counter"
+                }
+              : {}
+          }
+          className="game__counter"
+        ></div>
         <section className="game__stats">
           <div className="game__results">
             <h2 className="game__title">{points}</h2>

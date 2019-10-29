@@ -30,7 +30,8 @@ class Field extends Component {
       !this.props.clickedField &&
       !this.state.isFieldVisible
     ) {
-      indexTimeout = this.props.setTimeout(this.visible, 3000);
+      const count = Math.floor(Math.random() * (3000 - 800) + 800);
+      indexTimeout = this.props.setTimeout(this.visible, count);
     }
   };
 
