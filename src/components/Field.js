@@ -1,60 +1,109 @@
-import React from "react";
+import React, { Component } from "react";
 import "../styles/Field.scss";
 import ReactTimeout from "react-timeout";
 
 let indexTimeout = null;
 
-const Field = React.forwardRef((props, ref) => {
-  const { isTrue, id } = props.field;
-
-  const visibleOff = () => {
-    const icon = document.querySelector(`.field:nth-child(${id}) .fa-eye`);
-    icon.style.display = "none";
+class Field extends Component {
+  state = {
+    isFieldVisible: false,
+    firstVisibled: false
   };
 
-  const visible = () => {
-    const icon = document.querySelector(`.field:nth-child(${id}) .fa-eye`);
-    icon.style.display = "block";
-    props.setTimeout(visibleOff, 100);
+  visibleOff = () => {
+    this.setState({
+      isFieldVisible: false
+    });
   };
 
-  if (isTrue && !props.clickedField) {
-    indexTimeout = props.setTimeout(visible, 3000);
-  }
+  visible = () => {
+    this.setState({
+      isFieldVisible: true,
+      firstVisibled: true
+    });
+    this.props.setTimeout(this.visibleOff, 100);
+  };
 
-  const isCorrect = () => {
-    if (props.clickedField) {
-      if (isTrue) {
-        return <i className="fas fa-check"></i>;
-      } else if (props.clickedFieldId === id) {
-        return <i className="fas fa-times"></i>;
-      } else {
-        return null;
-      }
-    } else {
-      return null;
+  startVisibleOn = () => {
+    if (
+      this.props.field.isTrue &&
+      !this.props.clickedField &&
+      !this.state.isFieldVisible
+    ) {
+      indexTimeout = this.props.setTimeout(this.visible, 3000);
     }
   };
 
-  const clickField = id => {
-    props.handleClickField(id);
-    props.clearTimeout(indexTimeout);
+  clickField = id => {
+    this.props.handleClickField(id);
+    this.props.clearTimeout(indexTimeout);
   };
 
-  return (
-    <div
-      className={
-        props.fieldsNumber === 6
-          ? "game__field field game__field--six"
-          : "game__field field"
+  render() {
+    const { isTrue, id } = this.props.field;
+    const { fieldsNumber } = this.props;
+
+    if (!this.state.firstVisibled) this.startVisibleOn();
+
+    const isCorrect = () => {
+      if (this.props.clickedField) {
+        if (isTrue) {
+          return <i className="fas fa-check"></i>;
+        } else if (this.props.clickedFieldId === id) {
+          return <i className="fas fa-times"></i>;
+        } else {
+          return null;
+        }
+      } else {
+        return null;
       }
-      ref={ref}
-      onClick={() => clickField(id)}
-    >
-      <i className="fas fa-eye"></i>
-      {isCorrect()}
-    </div>
-  );
-});
+    };
+
+    const lvlStyles = () => {
+      const { level } = this.props;
+
+      if (level > 10) {
+        if (level > 20) {
+          if (level > 30) {
+            if (level > 40) {
+              return {
+                opacity: "0.05",
+                fontSize: "2rem"
+              };
+            }
+            return {
+              opacity: "0.05",
+              fontSize: "3rem"
+            };
+          }
+          return {
+            opacity: "0.2",
+            fontSize: "4rem"
+          };
+        }
+        return {
+          opacity: "0.5"
+        };
+      }
+    };
+
+    return (
+      <div
+        className={
+          fieldsNumber === 6
+            ? "game__field field game__field--six"
+            : "game__field field"
+        }
+        ref={this.ref}
+        onClick={() => this.clickField(id)}
+      >
+        {this.state.isFieldVisible && (
+          <i style={lvlStyles()} className="fas fa-eye"></i>
+        )}
+        {isCorrect()}
+      </div>
+    );
+  }
+}
 
 export default ReactTimeout(Field);

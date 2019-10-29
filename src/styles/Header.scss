@@ -5,13 +5,14 @@
     z-index: 1;
     display: flex;
     background-color: #2B2B3A;
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     box-shadow: 0 0 10px 2px #000;
 
     &__logo {
         font-size: 4rem;
         flex-grow: 1;
         text-transform: uppercase;
+        line-height: 100%;
 
         &--color {
             color: #EAFC40;
@@ -26,6 +27,8 @@
         color: #F4F5F6;
         cursor: pointer;
         transition: .3s;
+
+        display: flex;
 
         &:hover {
             color: #EAFC40;
@@ -42,6 +45,6 @@
     }
 
     @media (orientation: landscape) {
-        padding: 0 2rem;
+        padding: .5rem 2rem;
     }
 }

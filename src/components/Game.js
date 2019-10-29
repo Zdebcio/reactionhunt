@@ -121,6 +121,7 @@ class Game extends Component {
         clickedField={clickedField}
         clickedFieldId={clickedFieldId}
         fieldsNumber={fieldsNumber}
+        level={level}
       />
     ));
     const finiishLevel = () => {
