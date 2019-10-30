@@ -1,0 +1,47 @@
+.rules {
+    &__title {
+        font-size: 6rem;
+        text-align: center;
+        color: #EAFC40;
+        line-height: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (orientation: landscape) {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (orientation: landscape) and (min-width: 1024px) {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        font-size: 20px;
+        margin: 0 2rem 2rem 2rem;
+
+        &--strong {
+            font-weight: normal;
+            color: #EAFC40;
+        }
+
+        &--span {
+            color: #EAFC40;
+        }
+    }
+
+    &__list {
+        margin: 0 2rem 2rem 5rem;
+    }
+
+    &__list-text {
+        font-size: 18px;
+    }
+
+    &__img {
+        display: block;
+        margin: 0 auto 2rem;
+    }
+}
