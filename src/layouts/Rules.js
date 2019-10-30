@@ -16,7 +16,7 @@ const Rules = props => {
         W przeciągu trzech sekund na prawidłowym z nich pojawi się na krótki
         czas <span className="rules__text--span">symbol oka</span>.
       </p>
-      <img className="rules__img" src="/images/eye-on.png" alt="symbol oka" />
+      <img className="rules__img" src="./images/eye-on.png" alt="symbol oka" />
       <p className="rules__text">
         Zadaniem gracza jest wychwycenie lub trafienie które pole jest prawdziwe
         oraz{" "}
