@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Field from "./Field";
+import Counter from "../components/Counter";
+import Field from "../components/Field";
 
 import "../styles/Game.scss";
+import Results from "../components/Results";
 
 class Game extends Component {
   state = {
@@ -104,6 +106,46 @@ class Game extends Component {
     });
   };
 
+  finishLevel = () => {
+    const { clickedField, clickedFieldId } = this.state;
+    if (clickedField) {
+      const fieldWinId = [...this.state.fieldsInGame].filter(
+        field => field.isTrue
+      );
+      if (clickedFieldId === fieldWinId[0].id) {
+        return (
+          <>
+            <span className="game__complete-title game__complete-title--win">
+              Gratulacje, wygrałeś!
+            </span>
+            <button
+              className="game__complete-button"
+              onClick={this.handleNextLevel}
+            >
+              Następny poziom
+            </button>
+          </>
+        );
+      } else {
+        return (
+          <>
+            <span className="game__complete-title game__complete-title--lose">
+              Przegrałeś!
+            </span>
+            <button
+              className="game__complete-button"
+              onClick={this.handleResetGame}
+            >
+              Zagraj ponownie
+            </button>
+          </>
+        );
+      }
+    } else {
+      return null;
+    }
+  };
+
   render() {
     const {
       fieldsInGame,
@@ -114,6 +156,7 @@ class Game extends Component {
       fieldsNumber,
       isLevelRender
     } = this.state;
+
     const fields = fieldsInGame.map(field => (
       <Field
         key={field.id}
@@ -125,66 +168,16 @@ class Game extends Component {
         level={level}
       />
     ));
-    const finiishLevel = () => {
-      if (clickedField) {
-        const fieldWinId = [...this.state.fieldsInGame].filter(
-          field => field.isTrue
-        );
-        if (clickedFieldId === fieldWinId[0].id) {
-          return (
-            <>
-              <span className="game__complete-title game__complete-title--win">
-                Gratulacje, wygrałeś!
-              </span>
-              <button
-                className="game__complete-button"
-                onClick={this.handleNextLevel}
-              >
-                Następny poziom
-              </button>
-            </>
-          );
-        } else {
-          return (
-            <>
-              <span className="game__complete-title game__complete-title--lose">
-                Przegrałeś!
-              </span>
-              <button
-                className="game__complete-button"
-                onClick={this.handleResetGame}
-              >
-                Zagraj ponownie
-              </button>
-            </>
-          );
-        }
-      } else {
-        return null;
-      }
-    };
 
     return (
       <main className="content game">
-        <div
-          style={
-            !clickedField && isLevelRender
-              ? {
-                  color: "red",
-                  animationName: "counter"
-                }
-              : {}
-          }
-          className="game__counter"
-        ></div>
+        <Counter clickedField={clickedField} isLevelRender={isLevelRender} />
         <div className="game__wrapper">
-          <section className="game__stats">
-            <div className="game__results">
-              <h2 className="game__title">{points}</h2>
-              <h3 className="game__title game__title--small">Poziom {level}</h3>
-            </div>
-            <div className="game__complete">{finiishLevel()}</div>
-          </section>
+          <Results
+            points={points}
+            level={level}
+            finishLevel={this.finishLevel}
+          />
           <section className="game__board">
             {this.state.isLevelRender && fields}
           </section>

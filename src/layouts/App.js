@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Start from "./Start";
 import Rules from "./Rules";
-import Header from "../layouts/Header";
+import Header from "./Header";
 import Game from "./Game";
 
 import "../styles/App.scss";

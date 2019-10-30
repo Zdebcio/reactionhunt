@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "../styles/Start.scss";
-import GameOption from "./GameOption";
+import GameOption from "../components/GameOption";
 
 class Start extends Component {
-  state = {};
-
   gameMods = [
     {
       number: 0,
