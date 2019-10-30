@@ -177,16 +177,18 @@ class Game extends Component {
           }
           className="game__counter"
         ></div>
-        <section className="game__stats">
-          <div className="game__results">
-            <h2 className="game__title">{points}</h2>
-            <h3 className="game__title game__title--small">Poziom {level}</h3>
-          </div>
-          <div className="game__complete">{finiishLevel()}</div>
-        </section>
-        <section className="game__board">
-          {this.state.isLevelRender && fields}
-        </section>
+        <div className="game__wrapper">
+          <section className="game__stats">
+            <div className="game__results">
+              <h2 className="game__title">{points}</h2>
+              <h3 className="game__title game__title--small">Poziom {level}</h3>
+            </div>
+            <div className="game__complete">{finiishLevel()}</div>
+          </section>
+          <section className="game__board">
+            {this.state.isLevelRender && fields}
+          </section>
+        </div>
       </main>
     );
   }

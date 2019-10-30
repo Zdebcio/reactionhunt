@@ -21,7 +21,7 @@ const Header = props => {
   return (
     <header className="header">
       <h1 className="header__logo">
-        Nazwa <span className="header__logo--color">gry</span>
+        Reaction<span className="header__logo--color">Hunt</span>
       </h1>
       {backBtn()}
     </header>
