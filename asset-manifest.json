@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/reactionhunt/static/css/main.18a488e2.chunk.css",
+    "main.js": "/reactionhunt/static/js/main.ef9cac28.chunk.js",
+    "main.js.map": "/reactionhunt/static/js/main.ef9cac28.chunk.js.map",
+    "runtime-main.js": "/reactionhunt/static/js/runtime-main.5c497731.js",
+    "runtime-main.js.map": "/reactionhunt/static/js/runtime-main.5c497731.js.map",
+    "static/js/2.0fbad3b0.chunk.js": "/reactionhunt/static/js/2.0fbad3b0.chunk.js",
+    "static/js/2.0fbad3b0.chunk.js.map": "/reactionhunt/static/js/2.0fbad3b0.chunk.js.map",
+    "index.html": "/reactionhunt/index.html",
+    "precache-manifest.2180a1651886da4fb52b315439bfa53a.js": "/reactionhunt/precache-manifest.2180a1651886da4fb52b315439bfa53a.js",
+    "service-worker.js": "/reactionhunt/service-worker.js",
+    "static/css/main.18a488e2.chunk.css.map": "/reactionhunt/static/css/main.18a488e2.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c497731.js",
+    "static/js/2.0fbad3b0.chunk.js",
+    "static/css/main.18a488e2.chunk.css",
+    "static/js/main.ef9cac28.chunk.js"
+  ]
+}
